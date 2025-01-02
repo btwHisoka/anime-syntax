@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ anime.title }}</title>
+    <link rel="stylesheet" href="{% static 'anime_detail.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/anime/" class="back-button">Назад</a>
+            <h1>{{ anime.title }}</h1>
+        </div>
+    </header>
+
+    <section class="anime-detail">
+        <div class="container">
+            <div class="anime-info">
+                <div class="anime-image">
+                    {% if anime.image %}
+                        <img src="{{ anime.image.url }}" alt="{{ anime.title }}">
+                    {% else %}
+                        <p>Изображение не доступно</p>
+                    {% endif %}
+                </div>
+
+                <div class="anime-text">
+                    <p class="status">
+                        {% if anime.is_ongoing %}
+                            <span class="ongoing">Онгоинг</span>
+                        {% else %}
+                            <span class="completed">Завершено</span>
+                        {% endif %}
+                    </p>
+
+                    <h3>Описание:</h3>
+                    <p>{{ anime.description }}</p>
+
+                    <h3>Серии:</h3>
+                    <ul>
+                        {% for episode in anime.episodes_list.all %}
+                            <li>
+                                <a href="{{ episode.video_url }}" target="_blank">Серия {{ episode.episode_number }} - {{ episode.title }}</a>
+                            </li>
+                        {% empty %}
+                            <li>Серии ещё не добавлены.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="anime-player">
+                <iframe src="{{ anime.video_url }}" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Syntax-Anime. Все права защищены.</p>
+    </footer>
+</body>
+</html>

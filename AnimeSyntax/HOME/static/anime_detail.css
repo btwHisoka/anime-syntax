@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #00c0ff;
+    font-size: 2em;
+}
+
+.back-button {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    background-color: #00c0ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #ff4c00;
+}
+
+
+.anime-detail {
+    padding: 20px 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.anime-info {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.anime-image {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.anime-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.anime-text {
+    flex: 2;
+    padding-top: 10px;
+}
+
+.status {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ongoing {
+    color: #00ff00; 
+}
+
+.completed {
+    color: #ff4c00; 
+}
+
+h3 {
+    margin-top: 20px;
+    font-size: 1.4em;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+ul li a {
+    color: #00c0ff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #ff4c00;
+}
+
+.anime-player {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.anime-player iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 10px;
+    color: #b5b5b5;
+}
+
+footer p {
+    font-size: 1em;
+}
